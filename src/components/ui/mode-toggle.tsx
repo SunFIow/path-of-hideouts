@@ -4,14 +4,11 @@ import { Button } from '@/components/ui/button';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
 
 export function ModeToggle() {
 	const { theme, setTheme } = useTheme();
-	const [highlightColor, setHighlightColor] = useState('');
 
-	useEffect(() => setHighlightColor('text-app-color'), []);
-
+	const highlightColor = 'text-app-color';
 	const lightColor = theme == 'light' ? highlightColor : '';
 	const darkColor = theme == 'dark' ? highlightColor : '';
 	const systemColor = theme == 'system' ? highlightColor : '';
