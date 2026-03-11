@@ -1,5 +1,5 @@
 // import { useSyncExternalStoreWithSelector } from '@/util/useSESWS';
-import { Context, createContext as createContextOrig, useContext as useContextOrig, useEffect, useRef } from 'react';
+import { Context, createContext as createContextOrig, useContext as useContextOrig, useEffect, useRef, type JSX } from 'react';
 import { shallowEqual } from 'react-redux';
 import { useSyncExternalStoreWithSelector } from 'use-sync-external-store/with-selector';
 
@@ -26,7 +26,7 @@ export function createContext<T>(useStoreData: () => T, displayName: string = 'B
 function useStore<T>(useStoreData: () => T) {
 	const value = useStoreData();
 
-	const storeRef = useRef<Store<T>>();
+	const storeRef = useRef<Store<T>>(undefined);
 	let store = storeRef.current;
 
 	if (!store) {
