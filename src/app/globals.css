@@ -177,8 +177,8 @@
 }
 
 :root {
-	--font-base: 'Inter', 'Roobert', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	--font-display: 'Roobert', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	--font-base: var(--font-manrope), 'Segoe UI', sans-serif;
+	--font-display: var(--font-cormorant), Georgia, serif;
 	--font-mono: monospace;
 	scroll-behavior: smooth;
 	scroll-padding-top: 70px;
@@ -186,47 +186,56 @@
 
 :root {
 	color-scheme: light;
-	--color-font: var(--color-hinted-1);
-	--color-font-2: var(--color-hinted-6);
-	--color-font-faded: var(--color-hinted-8);
+	--color-font: #21160a;
+	--color-font-2: #513722;
+	--color-font-faded: #816753;
 
 	--color-font-shadow: color-mix(in srgb, var(--color-hinted-15), transparent 100%);
 	--color-font-shadow-highlight: 0px 0px 3px color-mix(in srgb, var(--color-hinted-3), transparent 80%);
 
-	--color-background-start: var(--color-hinted-15);
-	--color-background-end: var(--color-hinted-14);
+	--color-background-start: #f7efe1;
+	--color-background-end: #ead8b4;
 
-	--color-app: var(--color-hinted-14);
-	--color-app-accent: var(--color-hinted-10);
-	--color-app-contrast: var(--color-hinted-5);
-	--color-app-color: #9333ea;
+	--color-app: rgba(255, 248, 234, 0.88);
+	--color-app-accent: #c59a5d;
+	--color-app-contrast: #382516;
+	--color-app-color: #c86f1b;
 }
 
 [data-theme='dark'] {
 	color-scheme: dark;
 
-	--color-font: var(--color-hinted-14);
-	--color-font-2: var(--color-hinted-10);
-	--color-font-faded: var(--color-hinted-8);
+	--color-font: #f7ead3;
+	--color-font-2: #d3b98f;
+	--color-font-faded: #9e8460;
 
 	--color-font-shadow: color-mix(in srgb, var(--color-hinted-1), transparent 50%);
 	--color-font-shadow-highlight: 0px 0px 3px var(--color-hinted-3), 0px 0px 4px var(--color-hinted-2);
 
-	--color-background-start: var(--color-hinted-1);
-	--color-background-end: var(--color-hinted-0);
+	--color-background-start: #120e0b;
+	--color-background-end: #090705;
 
-	--color-app: var(--color-hinted-1);
-	--color-app-accent: var(--color-hinted-5);
-	--color-app-contrast: var(--color-hinted-12);
-	--color-app-color: #c084fc;
+	--color-app: rgba(20, 16, 12, 0.88);
+	--color-app-accent: #5c4630;
+	--color-app-contrast: #f0d7a9;
+	--color-app-color: #f0a341;
 }
 
 body {
 	color: var(--color-font);
-	background: linear-gradient(to bottom, var(--color-background-end)), var(--color-background-start);
-	background: linear-gradient(to bottom, var(--color-background-end), var(--color-background-start));
+	background: radial-gradient(circle at top, color-mix(in srgb, var(--color-app-color), transparent 84%), transparent 38%),
+		radial-gradient(circle at 20% 20%, color-mix(in srgb, var(--color-app-accent), transparent 90%), transparent 30%),
+		linear-gradient(to bottom, var(--color-background-end), var(--color-background-start));
+	font-family: var(--font-base);
 	font-size: var(--font-size-base);
 	text-shadow: 0 0 3px var(--color-font-shadow);
+}
+
+h1,
+h2,
+h3,
+.font-display {
+	font-family: var(--font-display);
 }
 
 @layer base {
@@ -249,65 +258,65 @@ body {
 
 @layer base {
 	:root {
-		--background: 240, 7%, 94%;
-		--foreground: 240, 5%, 7%;
+		--background: 39 48% 93%;
+		--foreground: 28 53% 10%;
 
-		--card: 240, 7%, 94%;
-		--card-foreground: 240, 5%, 7%;
+		--card: 40 43% 95%;
+		--card-foreground: 28 53% 10%;
 
-		--popover: 240, 7%, 94%;
-		--popover-foreground: 240, 5%, 7%;
+		--popover: 40 43% 95%;
+		--popover-foreground: 28 53% 10%;
 
-		--primary: 240, 5%, 7%;
-		--primary-foreground: 240, 7%, 94%;
+		--primary: 28 53% 10%;
+		--primary-foreground: 39 48% 93%;
 
-		--secondary: 240, 8%, 80%;
-		--secondary-foreground: 240, 5%, 7%;
+		--secondary: 37 38% 81%;
+		--secondary-foreground: 28 53% 10%;
 
-		--muted: 240, 8%, 80%;
-		--muted-foreground: 240, 7%, 35%;
+		--muted: 37 38% 81%;
+		--muted-foreground: 24 28% 35%;
 
-		--accent: 240, 8%, 80%;
-		--accent-foreground: 240, 5%, 7%;
+		--accent: 37 38% 81%;
+		--accent-foreground: 28 53% 10%;
 
 		--destructive: 0 84.2% 60.2%;
-		--destructive-foreground: 240, 7%, 94%;
+		--destructive-foreground: 39 48% 93%;
 
-		--border: 240, 8%, 80%;
-		--input: 240, 8%, 80%;
-		--ring: 240, 5%, 7%;
+		--border: 34 34% 73%;
+		--input: 34 34% 73%;
+		--ring: 28 53% 10%;
 
 		--radius: 0.5rem;
 	}
 
 	[data-theme='dark'] {
-		--background: 240 5% 7%;
-		--foreground: 240, 7%, 94%;
+		--background: 24 20% 7%;
+		--foreground: 39 48% 93%;
 
-		--card: 240 5% 7%;
-		--card-foreground: 240, 7%, 94%;
+		--card: 22 20% 10%;
+		--card-foreground: 39 48% 93%;
 
-		--popover: 240 5% 7%;
-		--popover-foreground: 240, 7%, 94%;
+		--popover: 22 20% 10%;
+		--popover-foreground: 39 48% 93%;
 
-		--primary: 240, 7%, 94%;
-		--primary-foreground: 240, 5%, 7%;
+		--primary: 39 48% 93%;
+		--primary-foreground: 24 20% 7%;
 
-		--secondary: 240, 7%, 21%;
-		--secondary-foreground: 240, 7%, 94%;
+		--secondary: 26 27% 19%;
+		--secondary-foreground: 39 48% 93%;
 
-		--muted: 240, 7%, 21%;
-		--muted-foreground: 240 9% 68.9%;
+		--muted: 26 27% 19%;
+		--muted-foreground: 33 20% 63%;
 
-		--accent: 240, 7%, 21%;
-		--accent-foreground: 240, 7%, 94%;
+		--accent: 26 27% 19%;
+		--accent-foreground: 39 48% 93%;
 
 		--destructive: 0 62.8% 30.6%;
-		--destructive-foreground: 240, 7%, 94%;
+		--destructive-foreground: 39 48% 93%;
 
-		--border: 240, 7%, 21%;
-		--input: 240, 7%, 21%;
-		--ring: 240 4.9% 83.9%;
+		--border: 26 27% 19%;
+		--input: 26 27% 19%;
+		--ring: 39 48% 93%;
 	}
 }
 

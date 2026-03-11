@@ -1,7 +1,5 @@
-import Dependencies from '@/components/dependencies';
 import Header from '@/components/header/header';
 import Hero from '@/components/hero';
-import Instruction from '@/components/instruction/instruction';
 import Logger from '@/lib/Logger';
 
 export default function App() {
@@ -10,10 +8,8 @@ export default function App() {
 	return (
 		<div className='relative flex min-h-screen flex-col'>
 			<Header />
-			<main className='flex flex-col items-center gap-20 p-14'>
+			<main className='mx-auto flex w-full max-w-7xl flex-1 flex-col items-center px-6 pb-16 pt-10 sm:px-10 lg:px-12'>
 				<Hero />
-				<Instruction />
-				<Dependencies />
 			</main>
 		</div>
 	);

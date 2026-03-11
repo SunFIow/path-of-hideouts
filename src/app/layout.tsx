@@ -2,27 +2,31 @@ import { AppProvider } from '@/context/app-context';
 import { ThemeProvider } from '@/context/theme-provider';
 import Logger from '@/lib/Logger';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Cormorant_Garamond, Manrope } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const manrope = Manrope({
+	subsets: ['latin'],
+	variable: '--font-manrope'
+});
+
+const cormorant = Cormorant_Garamond({
+	subsets: ['latin'],
+	weight: ['500', '600', '700'],
+	variable: '--font-cormorant'
+});
 
 export const metadata: Metadata = {
-	title: 'SunFIow Next.js Starter',
-	description: 'Template for a Next.js-powered React app starter',
-	icons: '/img/icon.png'
+	title: 'Path of Hideouts',
+	description: 'Import Path of Exile hideouts, save reusable modules, and remix them into new hideouts.'
 };
 
-export default function RootLayout({
-	children
-}: Readonly<{
-	children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 	Logger.log('Layout');
 
 	return (
 		<html lang='en' suppressHydrationWarning>
-			<body className={inter.className}>
+			<body className={`${manrope.variable} ${cormorant.variable}`}>
 				<AppProvider>
 					<ThemeProvider defaultTheme='system' enableSystem disableTransitionOnChange>
 						{children}

@@ -1,13 +1,13 @@
 {
-	"name": "sunfiow-nextjs-starter",
+	"name": "path-of-hideouts",
 	"version": "0.0.1",
-	"description": "Template for a Next.js-powered React app starter",
-	"homepage": "https://sunfiow.github.io/sunfiow-nextjs-starter/",
+	"description": "Local-first Path of Exile hideout planner and module editor",
+	"homepage": "https://poh.sunfiow.com",
 	"license": "MIT",
 	"author": "SunFIow",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/SunFIow/sunfiow-nextjs-starter.git"
+		"url": "https://github.com/SunFIow/path-of-hideouts.git"
 	},
 	"scripts": {
 		"dev": "next dev",
@@ -49,5 +49,5 @@
 		"typescript": "^5"
 	},
 	"private": true,
-	"packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
+	"packageManager": "yarn@4.12.0"
 }
